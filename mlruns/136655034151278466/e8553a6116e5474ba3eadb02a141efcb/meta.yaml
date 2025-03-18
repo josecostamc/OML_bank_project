@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/136655034151278466/e8553a6116e5474ba3eadb02a141efcb/artifacts
+end_time: 1742257981155
+entry_point_name: ''
+experiment_id: '136655034151278466'
+lifecycle_stage: active
+run_id: e8553a6116e5474ba3eadb02a141efcb
+run_name: Decision Tree - best parameters - pipeline
+run_uuid: e8553a6116e5474ba3eadb02a141efcb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742257972886
+status: 3
+tags: []
+user_id: jmigu

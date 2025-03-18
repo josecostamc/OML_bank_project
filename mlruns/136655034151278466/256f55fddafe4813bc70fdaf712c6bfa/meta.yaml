@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/136655034151278466/256f55fddafe4813bc70fdaf712c6bfa/artifacts
+end_time: 1742258038409
+entry_point_name: ''
+experiment_id: '136655034151278466'
+lifecycle_stage: active
+run_id: 256f55fddafe4813bc70fdaf712c6bfa
+run_name: Random Forest - best parameters - pipeline
+run_uuid: 256f55fddafe4813bc70fdaf712c6bfa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742258021576
+status: 3
+tags: []
+user_id: jmigu

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/136655034151278466/a2cff5ad21994be983d5a4c211715cc5/artifacts
+end_time: 1742253606261
+entry_point_name: ''
+experiment_id: '136655034151278466'
+lifecycle_stage: active
+run_id: a2cff5ad21994be983d5a4c211715cc5
+run_name: KNeighborsClassifier - best parameters - pipeline
+run_uuid: a2cff5ad21994be983d5a4c211715cc5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742253597973
+status: 3
+tags: []
+user_id: jmigu

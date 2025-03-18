@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/136655034151278466/620dd46871d24edc95bd439f1ce37a10/artifacts
+end_time: 1742257967996
+entry_point_name: ''
+experiment_id: '136655034151278466'
+lifecycle_stage: active
+run_id: 620dd46871d24edc95bd439f1ce37a10
+run_name: SVC - best parameters - pipeline
+run_uuid: 620dd46871d24edc95bd439f1ce37a10
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742257690157
+status: 3
+tags: []
+user_id: jmigu

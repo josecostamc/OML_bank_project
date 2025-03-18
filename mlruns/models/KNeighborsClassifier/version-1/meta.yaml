@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1742253605325
+current_stage: None
+description: ''
+last_updated_timestamp: 1742253605325
+name: KNeighborsClassifier
+run_id: a2cff5ad21994be983d5a4c211715cc5
+run_link: ''
+source: mlflow-artifacts:/136655034151278466/a2cff5ad21994be983d5a4c211715cc5/artifacts/knn_pipeline
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/136655034151278466/a2cff5ad21994be983d5a4c211715cc5/artifacts/knn_pipeline
+user_id: null
+version: 1
