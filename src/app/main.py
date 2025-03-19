@@ -11,6 +11,9 @@ import uvicorn
 with open('./config/app.json') as f:
     config = json.load(f)
 
+# Create a FastAPI application
+app = fastapi.FastAPI()
+
 
 # Define the inputs expected in the request body as JSON
 class Request(BaseModel):
@@ -40,11 +43,6 @@ class Request(BaseModel):
     PAY_AMT6: float = 2000.0
 
 
-
-
-# Create a FastAPI application
-app = fastapi.FastAPI()
-
 # Add CORS middleware to allow all origins, methods, and headers for local testing
 app.add_middleware(
     CORSMiddleware,
@@ -52,7 +50,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 @app.on_event("startup")
 async def startup_event():
@@ -70,7 +67,6 @@ async def startup_event():
     app.model = mlflow.pyfunc.load_model(model_uri = model_uri)
     
     print(f"Loaded model {model_uri}")
-
 
 @app.post("/has_diabetes")
 async def predict(input: Request):  
@@ -93,10 +89,3 @@ async def predict(input: Request):
     # Return the prediction result as a JSON response
     return {"prediction": prediction.tolist()[0]}
 
-
-@app.get("/hello")
-def hello():
-    return "hello"
-
-# Run the app on port 5001
-uvicorn.run(app=app, port=config["service_port"], host="0.0.0.0")
