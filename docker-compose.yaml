@@ -13,7 +13,7 @@ services:
       context: .
       dockerfile: Dockerfile.Service
       tags:
-        - lending-prediction-service:latest
+        - ghcr.io/josecostamc/lending-prediction-service:latest
     container_name: lending-prediction-service
     ports:
       - 5001:5001
@@ -23,7 +23,7 @@ services:
       context: .
       dockerfile: Dockerfile.UI
       tags:
-        - lending-prediction-ui:latest
+        - ghcr.io/josecostamc/lending-prediction-ui:latest
     container_name: lending-prediction-ui
     ports:
       - 5002:5002
