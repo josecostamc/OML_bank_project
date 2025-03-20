@@ -1,7 +1,6 @@
 name: venv
 channels:
-  - conda-forge
-  - defaults
+  - conda-forge  
   - https://repo.anaconda.com/pkgs/main
   - https://repo.anaconda.com/pkgs/r
 dependencies:
