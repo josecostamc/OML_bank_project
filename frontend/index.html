@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumos Bank</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0b9aad21;
+        }
+
+        header {
+            background-color: #0ba7ad;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        label {
+            display: inline-block;
+            min-width: 100px;
+            text-align: left;
+        }
+
+        input[type="number"] {
+            width: 150px;
+            padding: 5px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #0b9aad;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0b9aad;
+        }
+
+        #result {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 1.2em;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Rumos Bank</h1>
+    </header>
+    <div class="container">
+        <h2>Client Information</h2>
+        <form id="loanprediction">
+            <label for="LIMIT_BAL">LIMIT_BAL:</label>
+            <input type="number" id="LIMIT_BAL" name="LIMIT_BAL" step="0.1" required><br><br>
+            <label for="SEX">SEX:</label>
+            <input type="number" id="SEX" name="SEX" min="1" max="2" required><br><br>
+            <label for="EDUCATION">EDUCATION:</label>
+            <input type="number" id="EDUCATION" name="EDUCATION" min="1" max="6" required><br><br>
+            <label for="MARRIAGE">MARRIAGE:</label>
+            <input type="number" id="MARRIAGE" name="MARRIAGE" min="1" max="3" required><br><br>
+            <label for="AGE">AGE:</label>
+            <input type="number" id="AGE" name="AGE" required><br><br>
+            <label for="PAY_0">PAY_0:</label>
+            <input type="number" id="PAY_0" name="PAY_0" min="-1" max="9" required><br><br>
+            <label for="PAY_2">PAY_2:</label>
+            <input type="number" id="PAY_2" name="PAY_2" min="-1" max="9" required><br><br>
+            <label for="PAY_3">PAY_3:</label>
+            <input type="number" id="PAY_3" name="PAY_3" min="-1" max="9" required><br><br>
+            <label for="PAY_4">PAY_4:</label>
+            <input type="number" id="PAY_4" name="PAY_4" min="-1" max="9" required><br><br>
+            <label for="PAY_5">PAY_5:</label>
+            <input type="number" id="PAY_5" name="PAY_5" min="-1" max="9" required><br><br>
+            <label for="PAY_6">PAY_6:</label>
+            <input type="number" id="PAY_6" name="PAY_6" min="-1" max="9" required><br><br>
+            <label for="BILL_AMT1">BILL_AMT1:</label>
+            <input type="number" id="BILL_AMT1" name="BILL_AMT1" step="0.1" required><br><br>
+            <label for="BILL_AMT2">BILL_AMT2:</label>
+            <input type="number" id="BILL_AMT2" name="BILL_AMT2" step="0.1" required><br><br>
+            <label for="BILL_AMT3">BILL_AMT3:</label>
+            <input type="number" id="BILL_AMT3" name="BILL_AMT3" step="0.1" required><br><br>
+            <label for="BILL_AMT4">BILL_AMT4:</label>
+            <input type="number" id="BILL_AMT4" name="BILL_AMT4" step="0.1" required><br><br>
+            <label for="BILL_AMT5">BILL_AMT5:</label>
+            <input type="number" id="BILL_AMT5" name="BILL_AMT5" step="0.1" required><br><br>
+            <label for="BILL_AMT6">BILL_AMT6:</label>
+            <input type="number" id="BILL_AMT6" name="BILL_AMT6" step="0.1" required><br><br>
+            <label for="PAY_AMT1">PAY_AMT1:</label>
+            <input type="number" id="PAY_AMT1" name="PAY_AMT1" step="0.1" required><br><br>
+            <label for="PAY_AMT2">PAY_AMT2:</label>
+            <input type="number" id="PAY_AMT2" name="PAY_AMT2" step="0.1" required><br><br>
+            <label for="PAY_AMT3">PAY_AMT3:</label>
+            <input type="number" id="PAY_AMT3" name="PAY_AMT3" step="0.1" required><br><br>
+            <label for="PAY_AMT4">PAY_AMT4:</label>
+            <input type="number" id="PAY_AMT4" name="PAY_AMT4" step="0.1" required><br><br>
+            <label for="PAY_AMT5">PAY_AMT5:</label>
+            <input type="number" id="PAY_AMT5" name="PAY_AMT5" step="0.1" required><br><br>
+            <label for="PAY_AMT6">PAY_AMT6:</label>
+            <input type="number" id="PAY_AMT6" name="PAY_AMT6" step="0.1" required><br><br>
+            <input type="submit" value="Submit">
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+
+        // Populate form fields with default values
+        document.addEventListener('DOMContentLoaded', function () {
+            const defaultValues = {
+                'LIMIT_BAL': 30000.0,
+                'SEX': 1,
+                'EDUCATION': 2,
+                'MARRIAGE': 2,
+                'AGE': 25,
+                'PAY_0': 0,
+                'PAY_2': 0,
+                'PAY_3': 0,
+                'PAY_4': 0,
+                'PAY_5': 0,
+                'PAY_6': 0,
+                'BILL_AMT1': 8864.0,
+                'BILL_AMT2': 10062.0,
+                'BILL_AMT3': 11581.0,
+                'BILL_AMT4': 12580.0,
+                'BILL_AMT5': 13716.0,
+                'BILL_AMT6': 14828.0,
+                'PAY_AMT1': 1500.0,
+                'PAY_AMT2': 2000.0,
+                'PAY_AMT3': 1500.0,
+                'PAY_AMT4': 1500.0,
+                'PAY_AMT5': 1500.0,
+                'PAY_AMT6': 2000.0
+            };
+
+            Object.keys(defaultValues).forEach(key => {
+                const input = document.getElementById(key);
+                if (input) {
+                    input.value = defaultValues[key];
+                }
+            });
+        });
+
+        document.getElementById('loanprediction').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            fetch('http://127.0.0.1:5001/should_loan', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const resultDiv = document.getElementById('result');
+                    if (data.prediction === 1) {
+                        resultDiv.innerHTML = "The client has a high risk of default. You are advise not to loan.";
+                        resultDiv.style.color = 'red';
+                    } else if (data.prediction === 0) {
+                        resultDiv.innerHTML = "The client's loan has been approved.";
+                        resultDiv.style.color = 'green';
+                    } else {
+                        resultDiv.innerHTML = 'Error: Unable to predict.';
+                        resultDiv.style.color = 'black';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+
+    </script>
+</body>
+
+</html>

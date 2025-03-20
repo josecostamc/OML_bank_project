@@ -17,3 +17,13 @@ services:
     container_name: lending-prediction-service
     ports:
       - 5001:5001
+
+  lending-prediction-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.UI
+      tags:
+        - lending-prediction-ui:latest
+    container_name: lending-prediction-ui
+    ports:
+      - 5002:5002
