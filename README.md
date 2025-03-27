@@ -43,15 +43,24 @@ The Rumos Bank is a bank that has been losing a lot of money due to the amount o
 
 <h2 id="getting-started">Getting Started</h2>
 
-If you want to contribute to this project you can fork it and clone your own repository to your local machine:
+If you want to contribute to this project you can fork it and then clone your own repository to your local machine:
 
 <pre><code>git clone https://github.com/your_usermane/OML_bank_project.git</code></pre>
 
-then you need to set up the virtual environment with all the necessary libraries using the conda.yaml file:
+after that you need to set up the virtual environment with all the necessary libraries using the conda.yaml file:
 
 <pre><code>conda env create -f conda.yaml</code></pre>
 
+finally you just need to activate the virtual environment with:
+
+<pre><code>conda activate venv</code></pre>
+
+if you want to deactivate the venv, you can:
+
+<pre><code>conda deactivate venv</code></pre>
+
 <h2 id="mlflow">Notebook and MLflow Tracking Server</h2>
+
 
 <h2 id="api">API</h2>
 
