@@ -59,7 +59,31 @@ if you want to deactivate the venv, you can:
 
 <pre><code>conda deactivate venv</code></pre>
 
-<h2 id="mlflow">Notebook and MLflow Tracking Server</h2>
+<h2 id="mlflow">MLflow Tracking Server</h2>
+
+The notebooks used for this project are in the folder notebooks. 
+
+The rumos_bank_lending_prediction.ipynb file contains the research done in order to find the best model. 
+For each model, first was used grid search to find the best hyperparameters and then a run was created to log them into the MLflow tracking server. After this, all the models were compared and the best was defined as the @champion, which means it will be the one feed into production.
+
+All the information is being saved into the local folder mlruns, which means that every time the MLflow server runs it will upload the models from this folder.
+
+If you want to run the MLflow tracking server with Docker you only need the first service from the docker-compose.yaml file,
+
+<pre><code>services:
+  mlflow-tracking-server:
+    container_name: mlflow-tracking-server
+    image: ghcr.io/mlflow/mlflow
+    command: mlflow ui --port 5000 --host 0.0.0.0 --backend-store-uri ./mlruns --artifacts-destination ./mlruns
+    volumes:
+      - ./mlruns:/mlruns
+    ports:
+      - 5000:5000
+</code></pre>
+
+and then run the following command in the terminal:
+
+<pre><code>docker compose up -d --build</code></pre>
 
 
 <h2 id="api">API</h2>
