@@ -4,7 +4,7 @@
 
 # Rumos Bank - Machine Learning Operations Project
 
-<details>
+<details open>
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -12,6 +12,55 @@
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>     
-    </li>   
-  </ol>
+    </li>  
+    <li>
+      <a href="#mlflow">Notebook and MLflow Tracking Server</a>     
+    </li> 
+    <li>
+      <a href="#api">API</a>     
+    </li>
+    <li>
+      <a href="#ui">User Interface</a>     
+    </li> 
+    <li>
+      <a href="#packages">Packages</a>     
+    </li>
+    <li>
+      <a href="#cicd">CI/CD</a>     
+    </li>
+    <li>
+      <a href="#tests">Tests</a>     
+    </li>
+  </ol>  
 </details>
+
+
+<h2 id="about-the-project">About The Project</h2>
+
+This project was developed as the final assessment for the module machine learning operations (MLOps) of the postgraduate degree in data science. This is an academic project, which means that all the information is fictitious, the rumos bank doesn't exist.
+
+The Rumos Bank is a bank that has been losing a lot of money due to the amount of credit it provides that isn't paid back on time. We have been hired to help to develop a model that predicts which clients won't meet their deadlines. However the bank had a previous bad experience with a team of data scientists that took too long to put the model into production. The main goal of this project is not only to develop the model but also ensuring that the engineering team can feed the model into production efficiently.
+
+<h2 id="getting-started">Getting Started</h2>
+
+If you want to contribute to this project you can fork it and clone your own repository to your local machine:
+
+<pre><code>git clone https://github.com/your_usermane/OML_bank_project.git</code></pre>
+
+then you need to set up the virtual environment with all the necessary libraries using the conda.yaml file:
+
+<pre><code>conda env create -f conda.yaml</code></pre>
+
+<h2 id="mlflow">Notebook and MLflow Tracking Server</h2>
+
+<h2 id="api">API</h2>
+
+<h2 id="ui">User Interface</h2>
+
+<h2 id="packages">Packages</h2>
+
+<h2 id="cicd">CI/CD</h2>
+
+<h2 id="tests">Tests</h2>
+
+https://github.com/othneildrew/Best-README-Template/blob/main/BLANK_README.md
