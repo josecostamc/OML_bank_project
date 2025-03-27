@@ -14,7 +14,7 @@
       <a href="#getting-started">Getting Started</a>     
     </li>  
     <li>
-      <a href="#mlflow">Notebook and MLflow Tracking Server</a>     
+      <a href="#mlflow">MLflow Tracking Server</a>     
     </li> 
     <li>
       <a href="#api">API</a>     
