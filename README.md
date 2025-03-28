@@ -64,7 +64,7 @@ if you want to deactivate the venv, you can:
 The notebooks used for this project are in the folder notebooks. 
 
 The rumos_bank_lending_prediction.ipynb file contains the research done in order to find the best model. 
-For each model, first was used grid search to find the best hyperparameters and then a run was created to log them into the MLflow tracking server. After this, all the models were compared and the best was defined as the @champion, which means it will be the one feed into production.
+For each model, first was used grid search to find the best hyperparameters and then a run was created to log them into the MLflow tracking server, as well as the associated metrics. After this, all the models were compared and the best was defined as the @champion, which means it will be the one feed into production.
 
 All the information is being saved into the local folder mlruns, which means that every time the MLflow server runs it will upload the models from this folder.
 
@@ -85,6 +85,22 @@ and then run the following command in the terminal:
 
 <pre><code>docker compose up -d --build</code></pre>
 
+with the MLflow server running you can access it using the url: http://127.0.0.1:5000.
+
+List of models saved into the MLflow server:
+
+<ul>
+  <li>Neural_networks</li>
+  <li>Random_forest @champion</li>
+  <li>Decision_tree</li>
+  <li>SVC</li>
+  <li>KNeighborsClassifier</li>
+  <li>logistic_reg</li>
+</ul>
+
+Random Forest was selected as the model to be put into production (@champion), since it presented the best computacional time vs bussiness cost trade-off. For more information you can check the rumos_bank_lending_prediction notebook.
+
+
 
 <h2 id="api">API</h2>
 
@@ -95,5 +111,14 @@ and then run the following command in the terminal:
 <h2 id="cicd">CI/CD</h2>
 
 <h2 id="tests">Tests</h2>
+
+
+<table border="1">  
+  <tr style="background-color: red;">
+      <th>Header 1</th>
+      <th>Header 2</th>
+      <th>Header 3</th>
+  </tr>
+</table>
 
 https://github.com/othneildrew/Best-README-Template/blob/main/BLANK_README.md
