@@ -61,7 +61,7 @@ if you want to deactivate the venv, you can:
 
 <h2 id="mlflow">MLflow Tracking Server</h2>
 
-The notebooks used for this project are in the folder notebooks. 
+The notebooks used for this project can be found in the folder notebooks. 
 
 The rumos_bank_lending_prediction.ipynb file contains the research done in order to find the best model. 
 For each model, first was used grid search to find the best hyperparameters and then a run was created to log them into the MLflow tracking server, as well as the associated metrics. After this, all the models were compared and the best was defined as the @champion, which means it will be the one feed into production.
