@@ -104,7 +104,7 @@ Random Forest was selected as the model to be put into production (@champion), s
 
 <h2 id="api">API</h2>
 
-With FastAPI ws created an API that allows you to make predictions using the @champion model available in MLflow. The API loads the model from MLflow and exposes an endpoint to interact with it for making predictions.
+With FastAPI was created an API that allows you to make predictions using the @champion model available in MLflow. The API loads the model from MLflow and exposes an endpoint to interact with it for making predictions.
 
 If you want to use this API you can either build your own or use the lastest version of the package available in this repository. It is important to note that, in order to make predicitons the MLflow server should be running.
 
