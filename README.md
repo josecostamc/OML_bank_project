@@ -172,7 +172,9 @@ To use the UI you need to add a new service to the docker-compose.yaml file and 
       - 5002:5002
 </code></pre>
 
-Now, with the three services running (MLflow tracking server, API and UI) you can access to the url: http://127.0.0.1:5002 and predict if a client is likely to fail to pay the credict. Below you can see a preview of the UI.
+Now, with the three services running (MLflow tracking server, API and UI) you can access to the url: http://127.0.0.1:5002 and predict if a client is likely to fail to pay the credict. 
+
+Below you can see a preview of the UI.
 
 <div align="center">
     <img src="./images/ui_display.jpg" alt="ui" width="300px">    
