@@ -160,6 +160,24 @@ Example of response JSON:
 
 <h2 id="ui">User Interface</h2>
 
+The user interface gives you a more interactive and user friendly experience to interact with the endpoint and make predictions.
+
+To use the UI you need to add a new service to the docker-compose.yaml file and use the package available in this repository as the image, as shown in the example below:
+
+<pre><code>services:
+  lending-prediction-ui:
+    container_name: lending-prediction-ui
+    image: ghcr.io/josecostamc/llending-prediction-ui:latest    
+    ports:
+      - 5002:5002
+</code></pre>
+
+Now, with the three services running (MLflow tracking server, API and UI) you can access to the url: http://127.0.0.1:5002 and predict if a client is likely to fail to pay the credict. Below you can see a preview of the UI.
+
+<div align="center">
+    <img src="./images/ui.jpg" alt="ui" width="150px">    
+</div>
+
 <h2 id="packages">Packages</h2>
 
 <h2 id="cicd">CI/CD</h2>
