@@ -21,16 +21,10 @@
     </li>
     <li>
       <a href="#ui">User Interface</a>     
-    </li> 
-    <li>
-      <a href="#packages">Packages</a>     
-    </li>
+    </li>    
     <li>
       <a href="#cicd">CI/CD</a>     
-    </li>
-    <li>
-      <a href="#tests">Tests</a>     
-    </li>
+    </li>    
   </ol>  
 </details>
 
@@ -180,19 +174,21 @@ Below you can see a preview of the UI.
     <img src="./images/ui_display.jpg" alt="ui" width="300px">    
 </div>
 
-<h2 id="packages">Packages</h2>
+<h2 id="cicd">CI/CD (Continuous Integration/Continuous Deployment)</h2>
 
-<h2 id="cicd">CI/CD</h2>
+In this project, we use CI/CD pipelines to automate the process of building, testing, and deploying the packages. Every pull request or push to the main triggers the pipeline, ensuring that the codebase remains stable.
 
-<h2 id="tests">Tests</h2>
+<h3>Workflow</h3>
 
+<ul>
+  <li>Install Docker</li>
+  <li>Build Tracking server + Service + UI images</li>
+  <li>Install conda</li>
+  <li>Create and activate virtual environment</li>
+  <li>Tests</li>
+  <li>Push service (API) + UI</li>
+</ul>
 
-<table border="1">  
-  <tr style="background-color: red;">
-      <th>Header 1</th>
-      <th>Header 2</th>
-      <th>Header 3</th>
-  </tr>
-</table>
+You can view the full pipeline configuration in the .github/workflows/cicd.yaml file. If your CI/CD pipeline fails check the logs for errors.
 
-https://github.com/othneildrew/Best-README-Template/blob/main/BLANK_README.md
+<h3>Tests</h3

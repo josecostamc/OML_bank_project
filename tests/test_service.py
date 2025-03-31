@@ -10,7 +10,7 @@ def test_should_loan_prediction():
     Test for the /should_loan endpoint with valid input data.
     It should return a prediction in the response.
     """
-    response = requests.post(f"http://localhost:{config["service_port"]}/should_loan", json={
+    response = requests.post(f"http://localhost:{config['service_port']}/should_loan", json={
         'LIMIT_BAL': 30000.0,
         'SEX': 1,
         'EDUCATION': 2,
