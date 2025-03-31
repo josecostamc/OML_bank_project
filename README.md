@@ -126,6 +126,38 @@ To check if the API is working correctly you can access the url: http://127.0.0.
 
 The end point /should_loan expects a request that contains a JSON object with the features required by the model and the response will return a JSON object with the prediction.
 
+Example of request JSON:
+<pre><code>{
+  "LIMIT_BAL": 30000,
+  "SEX": 1,
+  "EDUCATION": 2,
+  "MARRIAGE": 2,
+  "AGE": 25,
+  "PAY_0": 0,
+  "PAY_2": 0,
+  "PAY_3": 0,
+  "PAY_4": 0,
+  "PAY_5": 0,
+  "PAY_6": 0,
+  "BILL_AMT1": 8864,
+  "BILL_AMT2": 10062,
+  "BILL_AMT3": 11581,
+  "BILL_AMT4": 12580,
+  "BILL_AMT5": 13716,
+  "BILL_AMT6": 14828,
+  "PAY_AMT1": 1500,
+  "PAY_AMT2": 2000,
+  "PAY_AMT3": 1500,
+  "PAY_AMT4": 1500,
+  "PAY_AMT5": 1500,
+  "PAY_AMT6": 2000
+}</code></pre>
+
+Example of response JSON:
+<pre><code>{
+  "prediction": 0
+}</code></pre>
+
 <h2 id="ui">User Interface</h2>
 
 <h2 id="packages">Packages</h2>
