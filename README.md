@@ -6,7 +6,7 @@
 
 <details open>
   <summary>Table of Contents</summary>
-  <ol>
+  <ul>
     <li>
       <a href="#about-the-project">About The Project</a>      
     </li>
@@ -25,7 +25,7 @@
     <li>
       <a href="#cicd">CI/CD</a>     
     </li>    
-  </ol>  
+  </ul>  
 </details>
 
 
