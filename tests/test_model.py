@@ -16,7 +16,7 @@ def model() -> mlflow.pyfunc.PyFuncModel:
     )
 
 
-def test_model_default(model: mlflow.pyfunc.PyFuncModel):
+def test_model_no_default(model: mlflow.pyfunc.PyFuncModel):
     input = pd.DataFrame.from_records([{
         'LIMIT_BAL': 30000.0,
         'SEX': 1,
@@ -46,7 +46,7 @@ def test_model_default(model: mlflow.pyfunc.PyFuncModel):
     assert prediction[0] == 0
 
 
-def test_model_no_default(model: mlflow.pyfunc.PyFuncModel):
+def test_model_default(model: mlflow.pyfunc.PyFuncModel):
     input = pd.DataFrame.from_records([{
         'LIMIT_BAL': 30000.0,
         'SEX': 1,

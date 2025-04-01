@@ -192,3 +192,51 @@ In this project, we use CI/CD pipelines to automate the process of building, tes
 You can view the full pipeline configuration in the .github/workflows/cicd.yaml file. If your CI/CD pipeline fails check the logs for errors.
 
 <h3>Tests</h3
+
+Service tests: validates that the API service has no errors, you can find them in ./tests/test_service.py.
+
+<ul>
+  <li>test_should_loan_prediction()</li>
+    <ul>
+      <li>
+        assert response.status_code == 200 -> pass if the request was successful.    
+      </li>
+      <li>
+        assert "prediction" in response.json() -> pass if prediction exists in response.json.
+      </li>
+      <li>
+        assert isinstance(response.json()["prediction"], int) -> pass if type of prediction value is int.
+      </li>
+      <li>
+       assert response.json()["prediction"] == 0 -> pass if the output value for the given input is 0.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+Model tests: validates that the model is working corretly. 
+
+<ul>
+  <li>test_model_no_default()</li>
+    <ul>
+      <li>
+        assert prediction[0] == 0 -> pass if the output value for the given input, which is supposed to be 0, is indeed 0.
+      </li>      
+    </ul>
+  </li>
+    <li>test_model_default()</li>
+    <ul>
+      <li>
+        assert prediction[0] == 1 -> pass if the output value for the given input, which is supposed to be 1, is indeed 1.
+      </li>      
+    </ul>
+  </li>
+   </li>
+    <li>test_model_out_shape()</li>
+    <ul>
+      <li>
+        assert prediction.shape == (1, ) -> pass if the output shape is correct. 
+      </li>      
+    </ul>
+  </li>
+</ul>
