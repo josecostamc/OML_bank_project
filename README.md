@@ -240,3 +240,10 @@ Model tests: validates that the model is working corretly.
     </ul>
   </li>
 </ul>
+
+<br>
+You can run the tests locally with the following command line:
+
+<pre><code>pytest</code></pre>
+
+Note that you need to have the MLfow server, API and UI running.
