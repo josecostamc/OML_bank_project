@@ -118,7 +118,7 @@ With both services created, API and MLflow server, all you need to do is to run 
 
 To check if the API is working correctly you can access the url: http://127.0.0.1:5001/docs. 
 
-The end point /should_loan expects a request that contains a JSON object with the features required by the model and the response will return a JSON object with the prediction.
+The end point /default_prediction expects a request that contains a JSON object with the features required by the model and the response will return a JSON object with the prediction.
 
 Example of request JSON:
 <pre><code>{
