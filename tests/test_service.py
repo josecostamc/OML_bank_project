@@ -5,7 +5,7 @@ import requests
 with open('./config/app.json') as f:
     config = json.load(f)
 
-def test_should_loan_prediction():
+def test_default_prediciton():
     """
     Test for the /should_loan endpoint with valid input data.
     It should return a prediction in the response.

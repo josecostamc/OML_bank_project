@@ -248,7 +248,7 @@ You can view the full pipeline configuration in the .github/workflows/cicd.yaml 
 Service tests: validates that the API service has no errors, you can find them in ./tests/test_service.py.
 
 <ul>
-  <li>test_should_loan_prediction()</li>
+  <li>test_default_prediciton()</li>
     <ul>
       <li>
         assert response.status_code == 200 -> pass if the request was successful.    
