@@ -9,13 +9,11 @@ import uvicorn
 
 #Load the application configuration
 with open('./config/app.json') as f:
-    config_file = json.load(f)
-    model_name = config_file['model_name']
-    model_version = config_file['model_version']
-    tracking_base_url = config_file['tracking_base_url']
-    tracking_port = config_file['tracking_port']
-    service_base_url = config_file['service_base_url']
-    service_port = config_file['service_port']
+    config_file = json.load(f) 
+
+tracking_uri = f"{config_file['tracking_base_url']}:{config_file['tracking_port']}"
+model_uri = f"models:/{config_file['model_name']}@{config_file['model_version']}"
+service_port = config_file['service_port']
 
 # Create a FastAPI application
 app = fastapi.FastAPI()
@@ -93,14 +91,13 @@ async def startup_event():
     in the local mlruns directory.
 
     """         
-    mlflow.set_tracking_uri(f"{tracking_base_url}:{tracking_port}")    
+    mlflow.set_tracking_uri(tracking_uri)    
 
-    # Load the registered model specified in the configuration
-    model_uri = f"models:/{model_name}@{model_version}" 
+    # Load the registered model specified in the configuration    
     app.model = mlflow.pyfunc.load_model(model_uri = model_uri)  
 
     # Gives access to the MLflow client
-    app.client = mlflow.tracking.MlflowClient(tracking_uri=f"{tracking_base_url}:{tracking_port}")
+    app.client = mlflow.tracking.MlflowClient(tracking_uri=tracking_uri)
         
     print(f"Loaded model {model_uri}")    
 
