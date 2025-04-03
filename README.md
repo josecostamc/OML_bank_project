@@ -98,7 +98,7 @@ Random Forest was selected as the model to be put into production (@champion), s
 
 <h2 id="api">API</h2>
 
-With FastAPI was created an API that allows you to make predictions using the @champion model available in MLflow. The API loads the model from MLflow and exposes an endpoint to interact with it for making predictions.
+With FastAPI was created an API that allows you to make predictions using the @champion model available in MLflow. The API loads the model from MLflow and exposes an endpoint to interact with it for making predictions, one endpoint to get the parameters of the model and other to get the model metrics.
 
 If you want to use this API you can either build your own or use the lastest version of the package available in this repository. It is important to note that, in order to make predicitons the MLflow server should be running.
 
@@ -118,7 +118,11 @@ With both services created, API and MLflow server, all you need to do is to run 
 
 To check if the API is working correctly you can access the url: http://127.0.0.1:5001/docs. 
 
-The end point /default_prediction expects a request that contains a JSON object with the features required by the model and the response will return a JSON object with the prediction.
+<h3>Endpoints</h3>
+
+<h4>/default_prediction [POST]</h4>
+
+This endpoint expects a request that contains a JSON object with the features required by the model and the response will return a JSON object with the prediction.
 
 Example of request JSON:
 <pre><code>{
@@ -150,6 +154,54 @@ Example of request JSON:
 Example of response JSON:
 <pre><code>{
   "prediction": 0
+}</code></pre>
+
+<h4>/model_params [GET]</h4>
+
+This endpoint returns the model parameters.
+
+Example of response JSON:
+<pre><code>{
+  "bootstrap": "True",
+  "ccp_alpha": "0.0",
+  "class_weight": "balanced",
+  "criterion": "gini",
+  "max_depth": "None",
+  "max_features": "sqrt",
+  "max_leaf_nodes": "None",
+  "max_samples": "None",
+  "memory": "None",
+  "min_impurity_decrease": "0.0",
+  "min_samples_leaf": "1",
+  "min_samples_split": "2",
+  "min_weight_fraction_leaf": "0.0",
+  "model": "RandomForestClassifier(class_weight='balanced', random_state=42)",
+  "monotonic_cst": "None",
+  "n_estimators": "100",
+  "n_jobs": "None",
+  "oob_score": "False",
+  "random_state": "42",
+  "scaler": "MinMaxScaler()",
+  "scaler__clip": "False",
+  "scaler__copy": "True",
+  "scaler__feature_range": "(0, 1)",
+  "seed": "42",
+  "steps": "[('scaler', MinMaxScaler()), ('model', RandomForestClassifier(class_weight='balanced', random_state=42))]",
+  "transform_input": "None",
+  "verbose": "0",
+  "warm_start": "False"
+}</code></pre>
+
+<h4>/model_metrics [GET]</h4>
+
+This endpoint returns the model metrics.
+
+Example of response JSON:
+<pre><code>{
+  "accuracy": 0.7885,
+  "min_cost": 2493000,
+  "recall": 0.5338918507235338,
+  "roc_auc": 0.6968584493643273
 }</code></pre>
 
 <h2 id="ui">User Interface</h2>
