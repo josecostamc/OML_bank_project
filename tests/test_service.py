@@ -5,14 +5,12 @@ import requests
 with open('./config/app.json') as f:
     config = json.load(f)
 
-url = f"http://localhost:{config['service_port']}/should_loan"
-
-def test_default_prediciton():
+def test_default_prediction():
     """
-    Test for the /should_loan endpoint with valid input data.
+    Test for the /default_prediction endpoint with valid input data.
     It should return a prediction in the response.
     """
-    response = requests.post(url=url, json={
+    response = requests.post(url=f"http://localhost:{config['service_port']}/default_prediction", json={
         'LIMIT_BAL': 30000.0,
         'SEX': 1,
         'EDUCATION': 2,
@@ -48,7 +46,7 @@ def test_model_params():
     It should return the model parameters in the response.
     """
 
-    response = requests.post(url=url)
+    response = requests.get(url=f"http://localhost:{config['service_port']}/model_params")
     assert response.status_code == 200
 
 def test_model_metrics():
@@ -57,6 +55,6 @@ def test_model_metrics():
     It should return the model metrics in the response.
     """
 
-    response = requests.post(url=url)
+    response = requests.get(url=f"http://localhost:{config['service_port']}/model_metrics")
     assert response.status_code == 200
 
