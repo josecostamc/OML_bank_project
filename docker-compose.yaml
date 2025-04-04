@@ -15,7 +15,6 @@ services:
       tags:
         - ghcr.io/josecostamc/lending-prediction-service:latest
     container_name: lending-prediction-service
-    image: lending-prediction-service
     ports:
       - 5001:5001
 
@@ -26,6 +25,5 @@ services:
       tags:
         - ghcr.io/josecostamc/lending-prediction-ui:latest
     container_name: lending-prediction-ui
-    image: lending-prediction-ui
     ports:
       - 5002:5002
