@@ -1,0 +1,21 @@
+services:
+  mlflow-tracking-server:
+    container_name: mlflow-tracking-server
+    image: ghcr.io/mlflow/mlflow
+    command: mlflow ui --port 5000 --host 0.0.0.0 --backend-store-uri ./mlruns --artifacts-destination ./mlruns
+    volumes:
+      - ./mlruns:/mlruns
+    ports:
+      - 5000:5000
+
+  lending-prediction-service:
+    container_name: lending-prediction-service
+    image: ghcr.io/josecostamc/lending-prediction-service:latest
+    ports:
+      - 5001:5001
+
+  lending-prediction-ui:
+    container_name: lending-prediction-ui
+    image: ghcr.io/josecostamc/lending-prediction-ui:latest
+    ports:
+      - 5002:5002

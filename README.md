@@ -213,7 +213,7 @@ To use the UI you need to add a new service to the docker-compose.yaml file and 
 <pre><code>services:
   lending-prediction-ui:
     container_name: lending-prediction-ui
-    image: ghcr.io/josecostamc/llending-prediction-ui:latest    
+    image: ghcr.io/josecostamc/lending-prediction-ui:latest    
     ports:
       - 5002:5002
 </code></pre>
