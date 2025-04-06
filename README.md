@@ -280,19 +280,19 @@ Model tests: validates that the model is working corretly.
   <li>test_model_no_default()</li>
     <ul>
       <li>assert prediction[0] == 0 -> pass if the output value for the given input, which is supposed to be 0, is indeed 0.</li>      
-    </ul>
-  </li>
+    </ul>  
     <li>test_model_default()</li>
     <ul>
       <li>assert prediction[0] == 1 -> pass if the output value for the given input, which is supposed to be 1, is indeed 1.</li>      
-    </ul>
-  </li>
-   </li>
+    </ul>     
     <li>test_model_out_shape()</li>
     <ul>
       <li>assert prediction.shape == (1, ) -> pass if the output shape is correct.</li>      
-    </ul>
-  </li>
+    </ul> 
+    <li>test_model_gender()</li>
+    <ul>
+      <li>assert prediction_male == prediction_female -> pass if the model prediction is equal for men and women with the remaining features unchanged, preventing gender bias.</li>      
+    </ul>  
 </ul>
 
 <br>
