@@ -135,7 +135,7 @@ def test_model_gender(model: mlflow.pyfunc.PyFuncModel):
         'PAY_AMT6': 2000.0
     }])
 
-    # inpute values for sex = female
+    # input values for sex = female
     input_female = pd.DataFrame.from_records([{
         'LIMIT_BAL': 30000.0,
         'SEX': 2,
