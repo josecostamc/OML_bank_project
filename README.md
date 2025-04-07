@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-[![Build Status](https://github.com/josecostamc/OML_bank_project/actions/workflows/cicd.yaml)](https://github.com/josecostamc/OML_bank_project/actions)
+[![CI/CD](https://github.com/josecostamc/OML_bank_project/actions/workflows/cicd.yaml/badge.svg?branch=main)](https://github.com/josecostamc/OML_bank_project/actions/workflows/cicd.yaml)
 </div>
 
 # Rumos Bank - Machine Learning Operations Project
