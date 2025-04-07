@@ -1,9 +1,11 @@
 <div align="center">
     <img src="./images/rumos_logo.jpg" alt="rumos_logo" width="150px">    
-    [![CI/CD](https://github.com/josecostamc/OML_bank_project/actions/workflows/cicd.yaml/badge.svg?branch=main)](https://github.com/josecostamc/OML_bank_project/actions/workflows/cicd.yaml)
+    
 </div>
 
-
+<div align="center">
+[![CI/CD](https://github.com/josecostamc/OML_bank_project/actions/workflows/cicd.yaml/badge.svg?branch=main)](https://github.com/josecostamc/OML_bank_project/actions/workflows/cicd.yaml)
+</div>
 
 # Rumos Bank - Machine Learning Operations Project
 
