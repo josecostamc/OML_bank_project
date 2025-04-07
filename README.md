@@ -31,9 +31,9 @@
 
 <h2 id="about-the-project">About The Project</h2>
 
-This project was developed as the final assessment for the module machine learning operations (MLOps) of the postgraduate degree in data science. This is an academic project, which means that all the information is fictitious, the rumos bank doesn't exist.
+This project was developed as the final assessment for the module machine learning operations (MLOps) of the postgraduate degree in data science. This is an academic project, which means that all the information is fictitious, the rumos bank does not exist.
 
-The Rumos Bank is a bank that has been losing a lot of money due to the amount of credit it provides that isn't paid back on time. We have been hired to help to develop a model that predicts which clients won't meet their deadlines. However the bank had a previous bad experience with a team of data scientists that took too long to put the model into production. The main goal of this project is not only to develop the model but also ensuring that the engineering team can feed the model into production efficiently.
+The Rumos Bank has been losing a lot of money due to the amount of credit it provides that isn't paid back on time. We have been hired to help develop a model that predicts which clients won't meet their deadlines. However the bank had a previous bad experience with a team of data scientists that took too long to put the model into production. The main goal of this project is not only to develop the model but also ensuring that the engineering team can put the model into production efficiently.
 
 <h2 id="getting-started">Getting Started</h2>
 
@@ -98,7 +98,7 @@ Random Forest was selected as the model to be put into production (@champion), s
 
 <h2 id="api">API</h2>
 
-With FastAPI was created an API that allows you to make predictions using the @champion model available in MLflow. The API loads the model from MLflow and exposes an endpoint to interact with it for making predictions, one endpoint to get the parameters of the model and other to get the model metrics.
+Using FastAPI framework was created an API that allows to make predictions using the @champion model available in MLflow. The API loads the model from the MLflow server and exposes three endpoints, one to make predictions based on a given input, one to get the parameters of the model and another one to get the model metrics.
 
 If you want to use this API you can either build your own or use the lastest version of the package available in this repository. It is important to note that, in order to make predicitons the MLflow server should be running.
 
@@ -228,7 +228,7 @@ Below you can see a preview of the UI.
 
 <h2 id="cicd">CI/CD (Continuous Integration/Continuous Deployment)</h2>
 
-In this project, we use CI/CD pipelines to automate the process of building, testing, and deploying the packages. Every pull request or push to the main triggers the pipeline, ensuring that the codebase remains stable.
+In this project, we use github actions along with a CI/CD pipeline to automate the process of building, testing, and deploying the packages. Every pull request or push to the main triggers the pipeline, ensuring that the codebase remains stable.
 
 <h3>Workflow</h3>
 
