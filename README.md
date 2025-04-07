@@ -213,10 +213,10 @@ This endpoint returns the model metrics.
 
 Example of response JSON:
 <pre><code>{
-  "accuracy": 0.7885,
+  "accuracy": 0.788,
   "min_cost": 2493000,
-  "recall": 0.5338918507235338,
-  "roc_auc": 0.6968584493643273
+  "recall": 0.534,
+  "roc_auc": 0.697
 }</code></pre>
 
 <h2 id="ui">User Interface</h2>
