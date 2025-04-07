@@ -1,5 +1,12 @@
 <div align="center">
-    <img src="./images/rumos_logo.jpg" alt="rumos_logo" width="150px">    
+    <img src="./images/rumos_logo.jpg" alt="rumos_logo" width="200px">    
+    
+</div>
+
+<div align="center">
+
+[![CI/CD](https://github.com/josecostamc/OML_bank_project/actions/workflows/cicd.yaml/badge.svg)](https://github.com/josecostamc/OML_bank_project/actions/workflows/cicd.yaml)
+
 </div>
 
 # Rumos Bank - Machine Learning Operations Project
@@ -31,11 +38,19 @@
 
 <h2 id="about-the-project">About The Project</h2>
 
-This project was developed as the final assessment for the module machine learning operations (MLOps) of the postgraduate degree in data science. This is an academic project, which means that all the information is fictitious, the rumos bank doesn't exist.
+This project was developed as the final assessment for the module machine learning operations (MLOps) of the postgraduate degree in data science. This is an academic project, which means that all the information is fictitious, the rumos bank does not exist.
 
-The Rumos Bank is a bank that has been losing a lot of money due to the amount of credit it provides that isn't paid back on time. We have been hired to help to develop a model that predicts which clients won't meet their deadlines. However the bank had a previous bad experience with a team of data scientists that took too long to put the model into production. The main goal of this project is not only to develop the model but also ensuring that the engineering team can feed the model into production efficiently.
+The Rumos Bank has been losing a lot of money due to the amount of credit it provides that isn't paid back on time. We have been hired to help develop a model that predicts which clients won't meet their deadlines. However the bank had a previous bad experience with a team of data scientists that took too long to put the model into production. The main goal of this project is not only to develop the model but also ensuring that the engineering team can put the model into production efficiently.
 
 <h2 id="getting-started">Getting Started</h2>
+
+<h3>Prerequisites</h3>
+
+<ul>
+  <li>Python</li>
+  <li>Conda</li>
+  <li>Docker</li>
+</ul>
 
 If you want to contribute to this project you can fork it and then clone your own repository to your local machine:
 
@@ -98,7 +113,7 @@ Random Forest was selected as the model to be put into production (@champion), s
 
 <h2 id="api">API</h2>
 
-With FastAPI was created an API that allows you to make predictions using the @champion model available in MLflow. The API loads the model from MLflow and exposes an endpoint to interact with it for making predictions, one endpoint to get the parameters of the model and other to get the model metrics.
+Using FastAPI framework was created an API that allows to make predictions using the @champion model available in MLflow. The API loads the model from the MLflow server and exposes three endpoints, one to make predictions based on a given input, one to get the parameters of the model and another one to get the model metrics.
 
 If you want to use this API you can either build your own or use the lastest version of the package available in this repository. It is important to note that, in order to make predicitons the MLflow server should be running.
 
@@ -198,10 +213,10 @@ This endpoint returns the model metrics.
 
 Example of response JSON:
 <pre><code>{
-  "accuracy": 0.7885,
+  "accuracy": 0.788,
   "min_cost": 2493000,
-  "recall": 0.5338918507235338,
-  "roc_auc": 0.6968584493643273
+  "recall": 0.534,
+  "roc_auc": 0.697
 }</code></pre>
 
 <h2 id="ui">User Interface</h2>
@@ -213,7 +228,7 @@ To use the UI you need to add a new service to the docker-compose.yaml file and 
 <pre><code>services:
   lending-prediction-ui:
     container_name: lending-prediction-ui
-    image: ghcr.io/josecostamc/llending-prediction-ui:latest    
+    image: ghcr.io/josecostamc/lending-prediction-ui:latest    
     ports:
       - 5002:5002
 </code></pre>
@@ -228,7 +243,7 @@ Below you can see a preview of the UI.
 
 <h2 id="cicd">CI/CD (Continuous Integration/Continuous Deployment)</h2>
 
-In this project, we use CI/CD pipelines to automate the process of building, testing, and deploying the packages. Every pull request or push to the main triggers the pipeline, ensuring that the codebase remains stable.
+In this project, we use github actions along with a CI/CD pipeline to automate the process of building, testing, and deploying the packages. Every pull request or push to the main triggers the pipeline, ensuring that the codebase remains stable.
 
 <h3>Workflow</h3>
 
@@ -280,19 +295,19 @@ Model tests: validates that the model is working corretly.
   <li>test_model_no_default()</li>
     <ul>
       <li>assert prediction[0] == 0 -> pass if the output value for the given input, which is supposed to be 0, is indeed 0.</li>      
-    </ul>
-  </li>
+    </ul>  
     <li>test_model_default()</li>
     <ul>
       <li>assert prediction[0] == 1 -> pass if the output value for the given input, which is supposed to be 1, is indeed 1.</li>      
-    </ul>
-  </li>
-   </li>
+    </ul>     
     <li>test_model_out_shape()</li>
     <ul>
       <li>assert prediction.shape == (1, ) -> pass if the output shape is correct.</li>      
-    </ul>
-  </li>
+    </ul> 
+    <li>test_model_gender()</li>
+    <ul>
+      <li>assert prediction_male == prediction_female -> pass if the model prediction is equal for men and women with the remaining features unchanged, preventing gender bias.</li>      
+    </ul>  
 </ul>
 
 <br>

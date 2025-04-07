@@ -134,9 +134,9 @@ async def get_params():
     run_id = app.model.metadata.to_dict()['run_id'] 
 
     # Get model parameters
-    model_params = app.client.get_run(run_id).data.params     
+    model_data = app.client.get_run(run_id).data.to_dictionary()     
 
-    return model_params
+    return model_data['params']
 
 @app.get("/model_metrics")
 async def get_metrics():
@@ -151,9 +151,11 @@ async def get_metrics():
     run_id = app.model.metadata.to_dict()['run_id']
 
     # Get model metrics
-    model_metrics = app.client.get_run(run_id).data.metrics 
-    
-    return model_metrics
+    model_data = app.client.get_run(run_id).data.to_dictionary()
+
+    metrics = dict((k, round(v,3)) for k, v in model_data['metrics'].items())
+
+    return metrics
 
 if __name__ == "__main__":
     uvicorn.run(app=app, port=service_port, host='0.0.0.0')
