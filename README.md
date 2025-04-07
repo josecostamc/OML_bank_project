@@ -2,6 +2,10 @@
     <img src="./images/rumos_logo.jpg" alt="rumos_logo" width="150px">    
 </div>
 
+<div align="center">
+[![Build Status](https://github.com/josecostamc/OML_bank_project/actions/workflows/cicd.yaml)](https://github.com/josecostamc/OML_bank_project/actions)
+</div>
+
 # Rumos Bank - Machine Learning Operations Project
 
 <details open>
