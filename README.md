@@ -44,6 +44,14 @@ The Rumos Bank has been losing a lot of money due to the amount of credit it pro
 
 <h2 id="getting-started">Getting Started</h2>
 
+<h3>Prerequisites</h3>
+
+<ul>
+  <li>Python</li>
+  <li>Conda</li>
+  <li>Docker</li>
+</ul>
+
 If you want to contribute to this project you can fork it and then clone your own repository to your local machine:
 
 <pre><code>git clone https://github.com/your_usermane/OML_bank_project.git</code></pre>
