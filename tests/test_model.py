@@ -6,6 +6,13 @@ import mlflow
 
 @pytest.fixture(scope='module')
 def model() -> mlflow.pyfunc.PyFuncModel:
+    """
+    A fixture to read the @champion model from the MLflow tracking sever.
+
+    Returns:
+        @champion model
+    """
+
     with open('./config/app.json') as f:
         config = json.load(f)
     mlflow.set_tracking_uri(f"http://localhost:{config['tracking_port']}")
@@ -17,6 +24,9 @@ def model() -> mlflow.pyfunc.PyFuncModel:
 
 
 def test_model_no_default(model: mlflow.pyfunc.PyFuncModel):
+    """
+    Verify that for this input data the prediction is 0.
+    """
     input = pd.DataFrame.from_records([{
         'LIMIT_BAL': 30000.0,
         'SEX': 1,
@@ -47,6 +57,9 @@ def test_model_no_default(model: mlflow.pyfunc.PyFuncModel):
 
 
 def test_model_default(model: mlflow.pyfunc.PyFuncModel):
+    """
+    Verify that for this input data the prediction is 1.
+    """
     input = pd.DataFrame.from_records([{
         'LIMIT_BAL': 30000.0,
         'SEX': 1,
@@ -77,6 +90,9 @@ def test_model_default(model: mlflow.pyfunc.PyFuncModel):
 
 
 def test_model_out_shape(model: mlflow.pyfunc.PyFuncModel):
+    """
+    Verify that the output shape is a single value.
+    """
     input = pd.DataFrame.from_records([{
         'LIMIT_BAL': 30000.0,
         'SEX': 1,
@@ -107,8 +123,13 @@ def test_model_out_shape(model: mlflow.pyfunc.PyFuncModel):
 
 
 def test_model_gender(model: mlflow.pyfunc.PyFuncModel):
-    
-    # input values for sex = male
+    """
+    Verify that the model it is not gender biased,
+    for the same input values if only changes gender the model gives the same results.
+
+    """
+   
+    # input valeus for sex = male
     input_male = pd.DataFrame.from_records([{
         'LIMIT_BAL': 30000.0,
         'SEX': 1,
