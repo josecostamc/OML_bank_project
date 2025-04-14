@@ -119,7 +119,7 @@ Random Forest was selected as the model to be put into production (@champion), s
 
 Using FastAPI framework was created an API that allows to make predictions using the @champion model available in MLflow. The API loads the model from the MLflow server and exposes three endpoints, one to make predictions based on a given input, one to get the parameters of the model and another one to get the model metrics.
 
-To use the API Docker image available in this repository you should add the service shown below to the docker-compose.yaml file used for the MLflow tracking server. It is important to note that, in order to make predicitons the MLflow server should be running.
+To use the API Docker image available in this repository you need to add the service shown below to the docker-compose.yaml file used for the MLflow tracking server. It is important to note that, in order to make predicitons the MLflow server should be running.
 
 <pre><code>services:
   lending-prediction-service:
@@ -225,7 +225,7 @@ Example of response JSON:
 
 The user interface gives you a more interactive and user friendly experience to interact with the endpoint and make predictions.
 
-To use the UI you need to add a new service to the docker-compose.yaml file and use the package available in this repository as the image, as shown in the example below:
+To use the UI you need to add a new service to the docker-compose.yaml file and use the UI Docker image available in this repository, as shown in the example below:
 
 <pre><code>services:
   lending-prediction-ui:
