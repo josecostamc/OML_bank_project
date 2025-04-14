@@ -97,7 +97,7 @@ and then run the following command in the terminal:
 with the MLflow server running you can access it using the url: http://127.0.0.1:5000. The image below shows a preview of the contents of the MLflow server.
 
 <div>
-    <img src="./images/mlflow_ui.jpg" alt="ui" width="700px">    
+  <img src="./images/mlflow_ui.jpg" alt="mlflow_ui" width="700px">    
 </div>
 
 List of models saved into the MLflow server:
