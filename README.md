@@ -40,7 +40,7 @@
 
 This project was developed as the final assessment for the module machine learning operations (MLOps) of the postgraduate degree in data science. This is an academic project, which means that all the information is fictitious, the rumos bank does not exist.
 
-The Rumos Bank has been losing a lot of money due to the amount of credit it provides that isn't paid back on time. We have been hired to help develop a model that predicts which clients won't meet their deadlines. However the bank had a previous bad experience with a team of data scientists that took too long to put the model into production. The main goal of this project is not only to develop the model but also ensuring that the engineering team can put the model into production efficiently.
+The Rumos Bank has been losing a lot of money due to the amount of credit it provides that isn't paid back on time. We have been hired to help develop a model that predicts which clients won't meet their deadlines. However, the bank had a previous bad experience with a team of data scientists that took too long to put the model into production. The main goal of this project is not only to develop the model but also ensuring that the engineering team can put the model into production efficiently.
 
 <h2 id="getting-started">Getting Started</h2>
 
