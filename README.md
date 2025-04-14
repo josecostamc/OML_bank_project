@@ -24,7 +24,7 @@
       <a href="#mlflow">MLflow Tracking Server</a>     
     </li> 
     <li>
-      <a href="#api">API</a>     
+      <a href="#api">Webservice</a>     
     </li>
     <li>
       <a href="#ui">User Interface</a>     
@@ -94,7 +94,11 @@ and then run the following command in the terminal:
 
 <pre><code>docker compose up -d --build</code></pre>
 
-with the MLflow server running you can access it using the url: http://127.0.0.1:5000.
+with the MLflow server running you can access it using the url: http://127.0.0.1:5000. The image below shows a preview of the contents of the MLflow server.
+
+<div>
+    <img src="./images/mlflow_ui.jpg" alt="ui" width="700px">    
+</div>
 
 List of models saved into the MLflow server:
 
@@ -111,13 +115,11 @@ Random Forest was selected as the model to be put into production (@champion), s
 
 
 
-<h2 id="api">API</h2>
+<h2 id="api">Webservice</h2>
 
 Using FastAPI framework was created an API that allows to make predictions using the @champion model available in MLflow. The API loads the model from the MLflow server and exposes three endpoints, one to make predictions based on a given input, one to get the parameters of the model and another one to get the model metrics.
 
-If you want to use this API you can either build your own or use the lastest version of the package available in this repository. It is important to note that, in order to make predicitons the MLflow server should be running.
-
-To use the API package with Docker you should add the service shown below to the docker-compose.yaml file used for the MLflow tracking server.
+To use the API Docker image available in this repository you should add the service shown below to the docker-compose.yaml file used for the MLflow tracking server. It is important to note that, in order to make predicitons the MLflow server should be running.
 
 <pre><code>services:
   lending-prediction-service:
@@ -127,7 +129,7 @@ To use the API package with Docker you should add the service shown below to the
       - 5001:5001
 </code></pre>
 
-With both services created, API and MLflow server, all you need to do is to run the following command in the terminal:
+With both services running, API and MLflow server, all you need to do is to run the following command in the terminal:
 
 <pre><code>docker compose up -d --build</code></pre>
 
@@ -253,7 +255,7 @@ In this project, we use github actions along with a CI/CD pipeline to automate t
   <li>Install conda</li>
   <li>Create and activate virtual environment</li>
   <li>Tests</li>
-  <li>Push service (API) + UI</li>
+  <li>Push Webservice (API) + UI</li>
 </ul>
 
 You can view the full pipeline configuration in the .github/workflows/cicd.yaml file. If your CI/CD pipeline fails check the logs for errors.
