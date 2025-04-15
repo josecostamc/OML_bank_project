@@ -31,7 +31,7 @@
     </li>    
     <li>
       <a href="#cicd">CI/CD</a>     
-    </li>    
+    </li>       
   </ul>  
 </details>
 
@@ -117,7 +117,7 @@ Random Forest was selected as the model to be put into production (@champion), s
 
 <h2 id="api">Webservice</h2>
 
-Using FastAPI framework was created an API that allows to make predictions using the @champion model available in MLflow. The API loads the model from the MLflow server and exposes three endpoints, one to make predictions based on a given input, one to get the parameters of the model and another one to get the model metrics.
+With the FastAPI framework an API was built, that allows to make predictions using the @champion model available in MLflow. The API loads the model from the MLflow server and exposes three endpoints, one to make predictions based on a given input, one to get the parameters of the model and another one to get the model metrics.
 
 To use the API Docker image available in this repository you need to add the service shown below to the docker-compose.yaml file used for the MLflow tracking server. It is important to note that, in order to make predicitons the MLflow server should be running.
 
@@ -133,7 +133,7 @@ With both services running, API and MLflow server, all you need to do is to run 
 
 <pre><code>docker compose up -d --build</code></pre>
 
-To check if the API is working correctly you can access the url: http://127.0.0.1:5001/docs. 
+To check if the API is working correctly you can access the url: http://127.0.0.1:5001/docs. To test the endpoints you can use the test_request.ipynb notebook.
 
 <h3>Endpoints</h3>
 
@@ -220,6 +220,7 @@ Example of response JSON:
   "recall": 0.534,
   "roc_auc": 0.697
 }</code></pre>
+
 
 <h2 id="ui">User Interface</h2>
 
