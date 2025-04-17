@@ -8,7 +8,10 @@ with open('./config/app.json') as f:
 def test_default_prediction():
     """
     Test for the /default_prediction endpoint with valid input data.
-    It should return a prediction in the response.
+    Verify is the request has been successfully completed.
+    Verify is the key prediction exists in response.json.
+    Verify is the prediction is of type int.
+    Verify if for the input data the prediction is 0.
     """
     response = requests.post(url=f"http://localhost:{config['service_port']}/default_prediction", json={
         'LIMIT_BAL': 30000.0,
@@ -43,7 +46,7 @@ def test_default_prediction():
 def test_model_params():
     """
     Test for the /model_params endpoint.
-    It should return the model parameters in the response.
+    Verify if the request has been successfully completed.
     """
 
     response = requests.get(url=f"http://localhost:{config['service_port']}/model_params")
@@ -52,7 +55,7 @@ def test_model_params():
 def test_model_metrics():
     """
     Test for the /model_metrics endpoint.
-    It should return the model metrics in the response.
+    Verify if the request has been successfully completed.
     """
 
     response = requests.get(url=f"http://localhost:{config['service_port']}/model_metrics")

@@ -24,14 +24,17 @@
       <a href="#mlflow">MLflow Tracking Server</a>     
     </li> 
     <li>
-      <a href="#api">API</a>     
+      <a href="#api">Webservice</a>     
     </li>
     <li>
       <a href="#ui">User Interface</a>     
     </li>    
     <li>
       <a href="#cicd">CI/CD</a>     
-    </li>    
+    </li>  
+    <li>
+      <a href="#ack">Acknowledgements</a>
+    </li>     
   </ul>  
 </details>
 
@@ -40,7 +43,7 @@
 
 This project was developed as the final assessment for the module machine learning operations (MLOps) of the postgraduate degree in data science. This is an academic project, which means that all the information is fictitious, the rumos bank does not exist.
 
-The Rumos Bank has been losing a lot of money due to the amount of credit it provides that isn't paid back on time. We have been hired to help develop a model that predicts which clients won't meet their deadlines. However the bank had a previous bad experience with a team of data scientists that took too long to put the model into production. The main goal of this project is not only to develop the model but also ensuring that the engineering team can put the model into production efficiently.
+The Rumos Bank has been losing a lot of money due to the amount of credit it provides that isn't paid back on time. We have been hired to help develop a model that predicts which clients won't meet their deadlines. However, the bank had a previous bad experience with a team of data scientists that took too long to put the model into production. The main goal of this project is not only to develop the model but also ensuring that the engineering team can put the model into production efficiently.
 
 <h2 id="getting-started">Getting Started</h2>
 
@@ -94,7 +97,11 @@ and then run the following command in the terminal:
 
 <pre><code>docker compose up -d --build</code></pre>
 
-with the MLflow server running you can access it using the url: http://127.0.0.1:5000.
+with the MLflow server running you can access it using the url: http://127.0.0.1:5000. The image below shows a preview of the contents of the MLflow server.
+
+<div align="center">
+  <img src="./images/mlflow_ui.JPG" alt="mlflow_ui" width="900px">    
+</div>
 
 List of models saved into the MLflow server:
 
@@ -111,13 +118,11 @@ Random Forest was selected as the model to be put into production (@champion), s
 
 
 
-<h2 id="api">API</h2>
+<h2 id="api">Webservice</h2>
 
-Using FastAPI framework was created an API that allows to make predictions using the @champion model available in MLflow. The API loads the model from the MLflow server and exposes three endpoints, one to make predictions based on a given input, one to get the parameters of the model and another one to get the model metrics.
+With the FastAPI framework an API was built, that allows to make predictions using the @champion model available in MLflow. The API loads the model from the MLflow server and exposes three endpoints, one to make predictions based on a given input, one to get the parameters of the model and another one to get the model metrics.
 
-If you want to use this API you can either build your own or use the lastest version of the package available in this repository. It is important to note that, in order to make predicitons the MLflow server should be running.
-
-To use the API package with Docker you should add the service shown below to the docker-compose.yaml file used for the MLflow tracking server.
+To use the API Docker image available in this repository you need to add the service shown below to the docker-compose.yaml file used for the MLflow tracking server. It is important to note that, in order to make predicitons the MLflow server should be running.
 
 <pre><code>services:
   lending-prediction-service:
@@ -127,11 +132,11 @@ To use the API package with Docker you should add the service shown below to the
       - 5001:5001
 </code></pre>
 
-With both services created, API and MLflow server, all you need to do is to run the following command in the terminal:
+With both services running, API and MLflow server, all you need to do is to run the following command in the terminal:
 
 <pre><code>docker compose up -d --build</code></pre>
 
-To check if the API is working correctly you can access the url: http://127.0.0.1:5001/docs. 
+To check if the API is working correctly you can access the url: http://127.0.0.1:5001/docs. To test the endpoints you can use the test_request.ipynb notebook.
 
 <h3>Endpoints</h3>
 
@@ -219,11 +224,14 @@ Example of response JSON:
   "roc_auc": 0.697
 }</code></pre>
 
+You can test the endpoints with the test_request notebook in the notebooks folder or with the user interface.
+
+
 <h2 id="ui">User Interface</h2>
 
 The user interface gives you a more interactive and user friendly experience to interact with the endpoint and make predictions.
 
-To use the UI you need to add a new service to the docker-compose.yaml file and use the package available in this repository as the image, as shown in the example below:
+To use the UI you need to add a new service to the docker-compose.yaml file and use the UI Docker image available in this repository, as shown in the example below:
 
 <pre><code>services:
   lending-prediction-ui:
@@ -253,7 +261,7 @@ In this project, we use github actions along with a CI/CD pipeline to automate t
   <li>Install conda</li>
   <li>Create and activate virtual environment</li>
   <li>Tests</li>
-  <li>Push service (API) + UI</li>
+  <li>Push Webservice (API) + UI</li>
 </ul>
 
 You can view the full pipeline configuration in the .github/workflows/cicd.yaml file. If your CI/CD pipeline fails check the logs for errors.
@@ -316,3 +324,8 @@ You can run the tests locally with the following command line:
 <pre><code>pytest</code></pre>
 
 Note that you need to have the MLfow server, API and UI running.
+
+
+<h2 id="ack">Acknowledgements</h2>
+
+Created and led by José Costa.
