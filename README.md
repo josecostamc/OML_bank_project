@@ -224,6 +224,8 @@ Example of response JSON:
   "roc_auc": 0.697
 }</code></pre>
 
+You can test the endpoints with the test_request notebook in the notebooks folder, or use the user interface.
+
 
 <h2 id="ui">User Interface</h2>
 
