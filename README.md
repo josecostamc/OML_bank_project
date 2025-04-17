@@ -326,4 +326,4 @@ Note that you need to have the MLfow server, API and UI running.
 
 <h2 id="ack">Acknowledgements</h2>
 
-Created and led by José Costa 
+Created and led by José Costa.
