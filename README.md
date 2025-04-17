@@ -31,7 +31,10 @@
     </li>    
     <li>
       <a href="#cicd">CI/CD</a>     
-    </li>       
+    </li>  
+    <li>
+      <a href="#ack">Acknowledgements</a>
+    </li>     
   </ul>  
 </details>
 
@@ -319,3 +322,8 @@ You can run the tests locally with the following command line:
 <pre><code>pytest</code></pre>
 
 Note that you need to have the MLfow server, API and UI running.
+
+
+<h2 id="ack">Acknowledgements</h2>
+
+Created and led by José Costa 
