@@ -76,11 +76,11 @@ if you want to deactivate the venv, you can:
 The notebooks used for this project can be found in the folder notebooks. 
 
 The rumos_bank_lending_prediction.ipynb file contains the research done in order to find the best model. 
-For each model, first was used grid search to find the best hyperparameters and then a run was created to log them into the MLflow tracking server, as well as the associated metrics. After this, all the models were compared and the best was defined as the @champion, which means it will be the one feed into production.
+For each model, first was used grid search to find the best hyperparameters and then a run was created to log them into the MLflow tracking server, as well as the associated metrics. After this, all the models were compared and the best one was defined as the @champion, which means it will be the one feed into production.
 
-All the information is being saved into the local folder mlruns, which means that every time the MLflow server runs it will upload the models from this folder.
+All the models are being saved into the local folder mlruns, which means that every time the MLflow server runs it will upload the models from this folder.
 
-If you want to run the MLflow tracking server with Docker you only need the first service from the docker-compose.yaml file,
+If you want to run the MLflow tracking server with Docker, you only need the first service from the docker-compose.yaml file,
 
 <pre><code>services:
   mlflow-tracking-server:
@@ -97,7 +97,7 @@ and then run the following command in the terminal:
 
 <pre><code>docker compose up -d --build</code></pre>
 
-with the MLflow server running you can access it using the url: http://127.0.0.1:5000. The image below shows a preview of the contents of the MLflow server.
+with the MLflow server running you can access it using the url: http://127.0.0.1:5000. The image below shows a preview of the MLflow tracking server.
 
 <div align="center">
   <img src="./images/mlflow_ui.JPG" alt="mlflow_ui" width="900px">    
@@ -107,7 +107,7 @@ List of models saved into the MLflow server:
 
 <ul>
   <li>Neural_networks</li>
-  <li>Random_forest @champion</li>
+  <li>Random_forest [@champion]</li>
   <li>Decision_tree</li>
   <li>SVC</li>
   <li>KNeighborsClassifier</li>
@@ -120,7 +120,7 @@ Random Forest was selected as the model to be put into production (@champion), s
 
 <h2 id="api">Webservice</h2>
 
-With the FastAPI framework an API was built, that allows to make predictions using the @champion model available in MLflow. The API loads the model from the MLflow server and exposes three endpoints, one to make predictions based on a given input, one to get the parameters of the model and another one to get the model metrics.
+With the FastAPI framework an API was built, that allows to make predictions using the @champion model available in MLflow. The API loads the model from the MLflow server and exposes three endpoints, one to make predictions based on a given input, one to get the model parameters and another one to get the model metrics.
 
 To use the API Docker image available in this repository you need to add the service shown below to the docker-compose.yaml file used for the MLflow tracking server. It is important to note that, in order to make predicitons the MLflow server should be running.
 
@@ -142,7 +142,7 @@ To check if the API is working correctly you can access the url: http://127.0.0.
 
 <h4>/default_prediction [POST]</h4>
 
-This endpoint expects a request that contains a JSON object with the features required by the model and the response will return a JSON object with the prediction.
+This endpoint expects a request that contains a JSON object with the features required by the model, and the response will return a JSON object with the prediction.
 
 Example of request JSON:
 <pre><code>{
@@ -224,7 +224,7 @@ Example of response JSON:
   "roc_auc": 0.697
 }</code></pre>
 
-You can test the endpoints with the test_request notebook in the notebooks folder or with the user interface.
+You can test the Webservice with the test_request notebook in the notebooks folder or with the user interface.
 
 
 <h2 id="ui">User Interface</h2>
